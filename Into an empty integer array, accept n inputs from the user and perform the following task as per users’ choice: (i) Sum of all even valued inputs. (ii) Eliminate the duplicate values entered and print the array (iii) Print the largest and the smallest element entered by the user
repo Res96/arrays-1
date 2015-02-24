@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main()
+{ int a[50],i,j,k,n,in,sum=0,pos,ans,min,max;
+  printf("enter the size of the array");
+  scanf("%d",&n);
+  printf("enter the elements");
+  for(i=0;i<n;i++)
+  scanf("%d",&a[i]);
+  do
+  {	printf("enter your option\n 1-sum of even no:s\n2-delete the duplicate\n 3-to find the largest and smallest no:");
+	scanf("%d",&in);
+	switch(in)
+	{case 1:for(i=0;i<n;i++)
+		{if(a[i]%2==0)
+		 sum=sum+a[i];}
+		 printf("%d",sum);
+		
+		break;
+	  case 2:for(i=0;i<n;i++)
+	        {for(j=0;j<n;j++)
+		{if(a[i]==a[j])
+		  pos=i;}}
+		  for(j=pos;j<n;j++)
+		    a[j]=a[j+1];
+		  for(i=0;i<n;i++)
+		    printf("%d ",a[i]);
+		  break;
+	  case 3: min=a[0];
+		 for(i=0;i<n;i++)
+		 {if(min>a[i])
+		 min=a[i];}
+		  max=a[0];
+		 for(i=0;i<n;i++)
+		 {if(max<a[i])
+		 max=a[i];}
+		 printf("min=%d\nmax=%d",min,max);
+		 break;
+	 printf("to continue press 1");
+	 scanf("%d",&ans);
+	  
+	}}
+	while(ans=1);
+	  return 0;
+}
+  
